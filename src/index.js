@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Container from './components/container';
-import Button from './components/button';
+import ButtonAddRecipeMain from './components/button-add-recipe';
 import DetailWindow from './components/detail-window';
 import AddRecipe from './actions/add-recipe';
 
@@ -9,7 +9,7 @@ class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			recipes: ['Recipe 1', 'Recipe 2', 'Recipe 3']
+			recipes: []
 		}
 	}
 
@@ -28,7 +28,7 @@ class App extends Component {
 		return (
 			<div>
 				<Container recipes={this.state.recipes}/>
-				<Button addRecipeItem={this.addRecipeItem}/>
+				<ButtonAddRecipeMain addRecipeItem={this.addRecipeItem}/>
 				<DetailWindow />
 				<AddRecipe/>
 			</div>

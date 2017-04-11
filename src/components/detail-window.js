@@ -9,3 +9,6 @@ const DetailWindow = function() {
 }
 
 export default DetailWindow;
+
+//https://react.semantic-ui.com/modules/modal
+// Implement Modal

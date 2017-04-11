@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Accordion, Panel } from 'react-bootstrap';
 import AddRecipe from '../actions/add-recipe';
+import ContainerRecipe from './container-recipe';
+
 
 class Container extends Component {
 	constructor(props) {
@@ -9,15 +12,16 @@ class Container extends Component {
 
 	render() {
 		const recipeItems = this.props.recipes.map(function(item, idx) {
-			return <li key={idx}> {item} </li>
+			return <Panel header={item} eventKey={idx}> Content goes here </Panel>
 		})
 		console.log('Container rendered')
 		return(
 			<div className='recipe-container'>
 				Hello from recipe container
-				<ul className='recipe-list'>
+				<Accordion className='recipe-list'>
 					{recipeItems}
-				</ul>
+				</Accordion>
+				<ContainerRecipe />
 			</div>
 		)
 	}
