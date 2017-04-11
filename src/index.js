@@ -14,12 +14,16 @@ class App extends Component {
 	}
 
 	addRecipeItem = () => {
-		this.state.recipes.push('test');
-		console.log(this.state.recipes)
+		let tempArr = this.state.recipes.slice();
+		tempArr.push('test');
+		this.setState({
+			recipes: tempArr
+		})
+		console.log(tempArr)
 	}
 
 	render() {
-		console.log('Hello World')
+		console.log('Index rendered')
 		
 		return (
 			<div>
@@ -34,3 +38,4 @@ class App extends Component {
 }
 
 ReactDOM.render(<App />, document.querySelector('.container'))
+
