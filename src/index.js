@@ -9,7 +9,7 @@ class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			recipes: []
+			recipes: ['Recipe 1', 'Recipe 2', 'Recipe 3']
 		}
 	}
 
@@ -23,10 +23,10 @@ class App extends Component {
 		
 		return (
 			<div>
-				<Container />
+				<Container recipes={this.state.recipes}/>
 				<Button addRecipeItem={this.addRecipeItem}/>
 				<DetailWindow />
-				<AddRecipe recipes={this.state.recipes}/>
+				<AddRecipe/>
 			</div>
 		)
 	}

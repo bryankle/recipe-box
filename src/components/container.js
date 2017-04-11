@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import AddRecipe from '../actions/add-recipe';
 
-const Container = function() {
+const Container = function(props) { // Container for recipe list
+	console.log(props.recipes)
+	const recipeItems = props.recipes.map(function(item, idx) {
+		return <li key={idx}> {item} </li>
+	})
+
 	return(
 		<div className='recipe-container'>
 			Hello from recipe container
 			<ul className='recipe-list'>
-				<li>Recipe Item 1</li>
-				<li>Recipe Item 2</li>
-				<li>Recipe Item 3</li>
+				{recipeItems}
 			</ul>
 		</div>
 	)
